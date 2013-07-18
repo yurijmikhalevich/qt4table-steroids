@@ -31,11 +31,3 @@ void CheckBoxDelegate::setModelData(QWidget *editor, QAbstractItemModel *model, 
     }
     model->submit();
 }
-
-//void CheckBoxDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
-//{
-//    QCheckBox *ed = new QCheckBox();
-//    QPixmap pm = QPixmap::grabWidget(ed);
-//    painter->drawPixmap(option.rect.x(), option.rect.y(), pm);
-////    painter->set
-//}
