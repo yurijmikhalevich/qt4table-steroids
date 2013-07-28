@@ -1,17 +1,22 @@
-#ifndef CHECKBOXDELEGATE_H
-#define CHECKBOXDELEGATE_H
+#ifndef SPINBOXDELEGATE_H
+#define SPINBOXDELEGATE_H
 
 #include <QStyledItemDelegate>
 
-class CheckBoxDelegate : public QStyledItemDelegate
+class SpinBoxDelegate : public QStyledItemDelegate
 {
     Q_OBJECT
 public:
-    explicit CheckBoxDelegate(QObject *parent = 0);
+    explicit SpinBoxDelegate(int minimum = 0, int maximum = 9999, int defaultValue = 0, QObject *parent = 0);
     QWidget *createEditor(QWidget *parent, const QStyleOptionViewItem &option, const QModelIndex &index) const;
     void setEditorData(QWidget *editor, const QModelIndex &index) const;
     void setModelData(QWidget *editor, QAbstractItemModel *model, const QModelIndex &index) const;
     
+private:
+    int minimum;
+    int maximum;
+    int defaultValue;
+    
 };
 
-#endif // CHECKBOXDELEGATE_H
+#endif // SPINBOXDELEGATE_H
