@@ -10,6 +10,12 @@ SteroidsModel<C>::SteroidsModel(QObject *parent) :
 }
 
 template <class C>
+void SteroidsModel<C>::queryChanged(QString query) {
+    filters.insert("query", query);
+    compileFilters();
+}
+
+template <class C>
 void SteroidsModel<C>::compileFilters()
 {
     this->setFilter(QStringList(filters.values()).join(" AND "));
