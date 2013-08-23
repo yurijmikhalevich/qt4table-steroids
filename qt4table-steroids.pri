@@ -5,7 +5,8 @@ HEADERS += \
     qt4table-steroids/steroidsview.h \
     qt4table-steroids/lineeditdelegate.h \
     qt4table-steroids/steroidsvalidator.h \
-    qt4table-steroids/sqluniquesteroidsvalidator.h
+    qt4table-steroids/sqluniquesteroidsvalidator.h \
+    qt4table-steroids/steroidsrelationaldelegate.h
 
 SOURCES += \
     qt4table-steroids/checkboxdelegate.cpp \
@@ -14,7 +15,8 @@ SOURCES += \
     qt4table-steroids/steroidsview.cpp \
     qt4table-steroids/lineeditdelegate.cpp \
     qt4table-steroids/steroidsvalidator.cpp \
-    qt4table-steroids/sqluniquesteroidsvalidator.cpp
+    qt4table-steroids/sqluniquesteroidsvalidator.cpp \
+    qt4table-steroids/steroidsrelationaldelegate.cpp
 
 OTHER_FILES = \
     qt4table-steroids/README.md \
