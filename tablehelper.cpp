@@ -14,7 +14,7 @@ QWidget *TableHelper::createRelationalEditor(QString tableName, QString column)
         throw query.lastError();
     }
     while (query.next()) {
-        editor->insertItem(query.record().value("id").toInt(), query.record().value(column).toString());
+        editor->addItem(query.record().value(column).toString(), query.record().value("id"));
     }
     return editor;
 }
