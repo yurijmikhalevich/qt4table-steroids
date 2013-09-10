@@ -1,10 +1,10 @@
 #ifndef TABLEHELPER_H
 #define TABLEHELPER_H
 
-#include <QWidget>
+#include <QComboBox>
 
 namespace TableHelper {
-QWidget *createRelationalEditor(QString tableName, QString column);
+QComboBox *createRelationalEditor(QString tableName, QString column);
 }
 
 #endif // TABLEHELPER_H

@@ -3,9 +3,8 @@
 #include <QSqlQuery>
 #include <QSqlRecord>
 #include <QSqlError>
-#include <QComboBox>
 
-QWidget *TableHelper::createRelationalEditor(QString tableName, QString column)
+QComboBox *TableHelper::createRelationalEditor(QString tableName, QString column)
 {
     QComboBox *editor = new QComboBox();
     QSqlQuery query;
