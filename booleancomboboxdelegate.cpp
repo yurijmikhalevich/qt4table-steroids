@@ -21,7 +21,7 @@ QWidget *BooleanComboBoxDelegate::createEditor(
 void BooleanComboBoxDelegate::setEditorData(
     QWidget *editor, const QModelIndex &index) const {
   QComboBox *cEditor = static_cast<QComboBox *>(editor);
-  cEditor->setCurrentIndex(index.data().toString() == "Работает" ? 0 : 1);
+  cEditor->setCurrentIndex(index.data().toString() == msFalse ? 0 : 1);
 }
 
 void BooleanComboBoxDelegate::setModelData(
