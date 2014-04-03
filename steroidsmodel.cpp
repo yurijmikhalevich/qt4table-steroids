@@ -1,6 +1,7 @@
 #include "steroidsmodel.h"
 #include <QSqlTableModel>
 #include <QSqlRelationalTableModel>
+#include <QDebug>
 
 template <class C>
 SteroidsModel<C>::SteroidsModel(QObject *parent)

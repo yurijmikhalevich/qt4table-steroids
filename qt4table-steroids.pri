@@ -7,7 +7,9 @@ HEADERS += \
     $$PWD/steroidsvalidator.h \
     $$PWD/sqluniquesteroidsvalidator.h \
     $$PWD/tablehelper.h \
-    qt4table-steroids/booleancomboboxdelegate.h
+    qt4table-steroids/booleancomboboxdelegate.h \
+    qt4table-steroids/datedelegate.h \
+    qt4table-steroids/steroidsrelationaldelegate.h
 
 SOURCES += \
     $$PWD/checkboxdelegate.cpp \
@@ -18,7 +20,9 @@ SOURCES += \
     $$PWD/steroidsvalidator.cpp \
     $$PWD/sqluniquesteroidsvalidator.cpp \
     $$PWD/tablehelper.cpp \
-    qt4table-steroids/booleancomboboxdelegate.cpp
+    qt4table-steroids/booleancomboboxdelegate.cpp \
+    qt4table-steroids/datedelegate.cpp \
+    qt4table-steroids/steroidsrelationaldelegate.cpp
 
 OTHER_FILES = \
     $$PWD/README.md \

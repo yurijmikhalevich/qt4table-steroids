@@ -10,7 +10,7 @@ class SteroidsModel : public C {
 public:
   explicit SteroidsModel(QObject *parent = 0);
 public slots:
-  void queryChanged(QString query);
+  virtual void queryChanged(QString query);
 protected:
   void compileFilters();
   QHash<QString, QString> filters;
