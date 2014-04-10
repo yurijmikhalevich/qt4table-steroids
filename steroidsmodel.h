@@ -6,14 +6,14 @@
 #include <QStringList>
 
 template <class C>
-class SteroidsModel : public C
-{
+class SteroidsModel : public C {
 public:
-    explicit SteroidsModel(QObject *parent = 0);
-
+  explicit SteroidsModel(QObject *parent = 0);
+public slots:
+  virtual void queryChanged(QString query);
 protected:
-    void compileFilters();
-    QHash<QString, QString> filters;
+  void compileFilters();
+  QHash<QString, QString> filters;
 };
 
 #endif // STEROIDSMODEL_H

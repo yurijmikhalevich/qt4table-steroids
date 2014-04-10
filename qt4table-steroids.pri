@@ -1,19 +1,29 @@
 HEADERS += \
-    qt4table-steroids/checkboxdelegate.h \
-    qt4table-steroids/steroidsmodel.h \
-    qt4table-steroids/spinboxdelegate.h \
-    qt4table-steroids/steroidsview.h \
-    qt4table-steroids/lineeditdelegate.h \
-    qt4table-steroids/steroidsvalidator.h
+    $$PWD/checkboxdelegate.h \
+    $$PWD/steroidsmodel.h \
+    $$PWD/spinboxdelegate.h \
+    $$PWD/steroidsview.h \
+    $$PWD/lineeditdelegate.h \
+    $$PWD/steroidsvalidator.h \
+    $$PWD/sqluniquesteroidsvalidator.h \
+    $$PWD/relationalcombobox.h \
+    qt4table-steroids/booleancomboboxdelegate.h \
+    qt4table-steroids/datedelegate.h \
+    qt4table-steroids/steroidsrelationaldelegate.h
 
 SOURCES += \
-    qt4table-steroids/checkboxdelegate.cpp \
-    qt4table-steroids/steroidsmodel.cpp \
-    qt4table-steroids/spinboxdelegate.cpp \
-    qt4table-steroids/steroidsview.cpp \
-    qt4table-steroids/lineeditdelegate.cpp \
-    qt4table-steroids/steroidsvalidator.cpp
+    $$PWD/checkboxdelegate.cpp \
+    $$PWD/steroidsmodel.cpp \
+    $$PWD/spinboxdelegate.cpp \
+    $$PWD/steroidsview.cpp \
+    $$PWD/lineeditdelegate.cpp \
+    $$PWD/steroidsvalidator.cpp \
+    $$PWD/sqluniquesteroidsvalidator.cpp \
+    $$PWD/relationalcombobox.cpp \
+    qt4table-steroids/booleancomboboxdelegate.cpp \
+    qt4table-steroids/datedelegate.cpp \
+    qt4table-steroids/steroidsrelationaldelegate.cpp
 
 OTHER_FILES = \
-    qt4table-steroids/README.md \
-    qt4table-steroids/LICENSE
+    $$PWD/README.md \
+    $$PWD/LICENSE
