@@ -1,9 +1,9 @@
 #include "relationalcombobox.h"
 
-#include <QSqlQuery>
 #include <QSqlRecord>
 #include <QSqlError>
 #include <QSqlTableModel>
+#include <QDebug>
 
 TableSteroids::RelationalComboBox::RelationalComboBox(
     QString tableName, QString columnName, QString databaseName,
@@ -20,9 +20,13 @@ TableSteroids::RelationalComboBox::RelationalComboBox(
 }
 
 int TableSteroids::RelationalComboBox::currentId() {
+  return findId(this->currentText());
+}
+
+int TableSteroids::RelationalComboBox::findId(QString displayData) {
   query.prepare(QString("SELECT id FROM %1 WHERE %2 = ?").arg(
                   tableName, columnName));
-  query.addBindValue(this->currentText());
+  query.addBindValue(displayData);
   if (!query.exec() || !query.next()) {
     if (query.lastError().isValid()) {
       qDebug() << query.lastError().text();

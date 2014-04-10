@@ -6,6 +6,7 @@
 template <class C>
 SteroidsModel<C>::SteroidsModel(QObject *parent)
     : C(parent) {
+  QSqlTableModel::setEditStrategy(QSqlTableModel::OnFieldChange);
 }
 
 template <class C>

@@ -4,6 +4,7 @@
 #include <QComboBox>
 #include <QSqlDatabase>
 #include <QSqlQueryModel>
+#include <QSqlQuery>
 
 namespace TableSteroids {
 class RelationalComboBox : public QComboBox {
@@ -13,6 +14,7 @@ public:
                      QString databaseName = QSqlDatabase::defaultConnection,
                      QWidget *parent = 0);
   int currentId();
+  int findId(QString displayData);
 private:
   QSqlQueryModel *model;
   QSqlQuery query;
