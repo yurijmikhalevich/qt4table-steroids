@@ -6,21 +6,20 @@
 #include <QMenu>
 #include <QSqlTableModel>
 
-class SteroidsView : public QTableView
-{
-    Q_OBJECT
+class SteroidsView : public QTableView {
+  Q_OBJECT
 public:
-    explicit SteroidsView(QWidget *parent = 0);
-    void setModel(QAbstractItemModel *model);
+  explicit SteroidsView(QWidget *parent = 0);
+  void setModel(QAbstractItemModel *model);
 private:
-    QShortcut *deleteShortcut;
-    QMenu *contextMenu;
+  QShortcut *deleteShortcut;
+  QMenu *contextMenu;
 public slots:
-    void deleteSelected();
+  void deleteSelected();
 private slots:
-    void showContextMenu(QPoint);
+  void showContextMenu(QPoint);
 signals:
-    void deleteSelectedRows(QModelIndexList selectedRows);
+  void deleteSelectedRows(QModelIndexList selectedRows);
 };
 
 #endif // STEROIDSVIEW_H
