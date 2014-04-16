@@ -5,12 +5,14 @@
 #include <QSqlDatabase>
 #include <QSqlQueryModel>
 #include <QSqlQuery>
+#include <QHash>
 
 namespace TableSteroids {
 class RelationalComboBox : public QComboBox {
   Q_OBJECT
 public:
   RelationalComboBox(QString tableName, QString columnName,
+                     QHash<QString, QString> additions = {},
                      QString databaseName = QSqlDatabase::defaultConnection,
                      QWidget *parent = 0);
   int currentId();
@@ -20,6 +22,7 @@ private:
   QSqlQuery query;
   QString tableName;
   QString columnName;
+  QHash<QString, QString> additions;
 };
 }
 
