@@ -2,14 +2,19 @@
 #include <QSqlQuery>
 
 SQLUniqueSteroidsValidator::SQLUniqueSteroidsValidator(
-    QString tableName, QString fieldName, QObject *parent)
-    : SteroidsValidator(parent) {
-  this->tableName = tableName;
-  this->fieldName = fieldName;
+    QString tableName, QString fieldName, bool isNotNull, QObject *parent)
+    : SteroidsValidator(parent),
+      tableName(tableName),
+      fieldName(fieldName),
+      isNotNull(isNotNull) {
 }
 
 QValidator::State SQLUniqueSteroidsValidator::validate(
     QString &input, int &) const {
+  input = input.simplified();
+  if (isNotNull && input.isEmpty()) {
+    return Intermediate;
+  }
   if (input == modelData) {
     return Acceptable;
   }
@@ -19,7 +24,7 @@ QValidator::State SQLUniqueSteroidsValidator::validate(
   query.addBindValue(input);
   if (!query.exec() || query.next()) {
     emit invalidInput(input);
-    return Invalid;
+    return Intermediate;
   }
   return Acceptable;
 }

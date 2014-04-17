@@ -7,11 +7,13 @@ class SQLUniqueSteroidsValidator : public SteroidsValidator {
   Q_OBJECT
 public:
   explicit SQLUniqueSteroidsValidator(
-      QString tableName, QString fieldName, QObject *parent = 0);
+      QString tableName, QString fieldName, bool isNotNull,
+      QObject *parent = 0);
   State validate(QString &input, int &) const;
 private:
   QString tableName;
   QString fieldName;
+  bool isNotNull;
 signals:
   void invalidInput(QString &input) const;
 };
