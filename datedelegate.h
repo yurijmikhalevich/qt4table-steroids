@@ -7,7 +7,9 @@
 class DateDelegate : public QStyledItemDelegate {
   Q_OBJECT
 public:
-  DateDelegate(QDate defaultDate, QObject *parent = 0);
+  DateDelegate(QDate defaultDate, QObject *parent = 0,
+               QDate minimumDate = QDate(0, 0, 0),
+               QDate maximumDate = QDate(9999, 12, 31));
   QWidget *createEditor(
       QWidget *parent,
       const QStyleOptionViewItem &option = QStyleOptionViewItem(),
@@ -16,7 +18,9 @@ public:
   void setModelData(QWidget *editor, QAbstractItemModel *model,
                     const QModelIndex &index) const;
 private:
-  QDate mDefaultDate;
+  QDate defaultDate;
+  QDate minimumDate;
+  QDate maximumDate;
 };
 
 #endif // DATEDELEGATE_H
