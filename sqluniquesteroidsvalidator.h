@@ -3,18 +3,17 @@
 
 #include "steroidsvalidator.h"
 
-class SQLUniqueSteroidsValidator : public SteroidsValidator
-{
-    Q_OBJECT
+class SQLUniqueSteroidsValidator : public SteroidsValidator {
+  Q_OBJECT
 public:
-    explicit SQLUniqueSteroidsValidator(QString tableName, QString fieldName, QObject *parent = 0);
-    State validate(QString &input, int &) const;
+  explicit SQLUniqueSteroidsValidator(
+      QString tableName, QString fieldName, QObject *parent = 0);
+  State validate(QString &input, int &) const;
 private:
-    QString tableName;
-    QString fieldName;
+  QString tableName;
+  QString fieldName;
 signals:
-    void invalidInput(QString &input) const;
-    
+  void invalidInput(QString &input) const;
 };
 
 #endif // SQLUNIQUESTEROIDSVALIDATOR_H
