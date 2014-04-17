@@ -16,6 +16,7 @@ private:
   bool isNotNull;
 signals:
   void invalidInput(QString &input) const;
+  void validInput(QString &input) const;
 };
 
 #endif // SQLUNIQUESTEROIDSVALIDATOR_H

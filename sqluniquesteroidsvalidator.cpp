@@ -13,9 +13,11 @@ QValidator::State SQLUniqueSteroidsValidator::validate(
     QString &input, int &) const {
   input = input.simplified();
   if (isNotNull && input.isEmpty()) {
+    emit invalidInput(input);
     return Intermediate;
   }
   if (input == modelData) {
+    emit validInput(input);
     return Acceptable;
   }
   QSqlQuery query;
@@ -26,5 +28,6 @@ QValidator::State SQLUniqueSteroidsValidator::validate(
     emit invalidInput(input);
     return Intermediate;
   }
+  emit validInput(input);
   return Acceptable;
 }
