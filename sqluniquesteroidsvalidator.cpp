@@ -11,19 +11,19 @@ SQLUniqueSteroidsValidator::SQLUniqueSteroidsValidator(
 
 QValidator::State SQLUniqueSteroidsValidator::validate(
     QString &input, int &) const {
-  input = input.simplified();
-  if (isNotNull && input.isEmpty()) {
+  QString inputData = QString(input).simplified();
+  if (isNotNull && inputData.isEmpty()) {
     emit invalidInput(input);
     return Intermediate;
   }
-  if (input == modelData) {
+  if (inputData == modelData) {
     emit validInput(input);
     return Acceptable;
   }
   QSqlQuery query;
   query.prepare(QString("SELECT id FROM %1 WHERE %2 = ? LIMIT 1").arg(
                   tableName, fieldName));
-  query.addBindValue(input);
+  query.addBindValue(inputData);
   if (!query.exec() || query.next()) {
     emit invalidInput(input);
     return Intermediate;
